@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>指令</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+    
+</head>
+    <div id="app">
+        <div v-if='seen'>我被显示了</div>
+        <img :src="imgs" alt="">
+        <div :id='id'>id的值为{{id}}</div>
+
+    </div>
+<body>
+    <script>
+        var data = {
+        msg:"yuanmingde",
+        seen:true,
+        imgs:'https://vuejs.org/images/logo.png',
+        id:"scr"
+    };
+    var vm = new Vue({
+        el:"#app",
+        data
+    })
+    </script>
+
+
+
+
+</body>
+</html>

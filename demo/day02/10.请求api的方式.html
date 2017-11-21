@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script> 
+    <script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.min.js"></script>   
+</head>
+<body>
+<div id="app">
+    github:Id:<input type="text" v-model = 'uid'/>
+    <button @click='getUser(uid)'>git信息</button>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            user:{},
+            uid:'',
+        },
+        methods:{
+        getUser:function(uid){
+            this.$http.get("")
+        }
+        }
+    })
+</script>
+</body>
+</html>

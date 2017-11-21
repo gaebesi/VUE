@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+</head>
+<!-- 对象需要深度监听 -->
+<body>
+    <div id="app">
+        {{a}}
+        <br> {{b}}
+        <br>
+        {{obj.name}}
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "mingde",
+            a: 111,
+            b: 222,
+            obj:{
+                name:"stark",
+                age:"18"
+            }
+        }
+    })
+    //  键是需要观察的表达式，值是对应回调函数
+    vm.$watch('obj', function () {
+        alert("发生了变化");
+        this.b = this.a + 100
+        // 开启深度监听 { [key: string]: string | Function | Object }
+    },{
+        deep:true
+    });
+    document.onclick = function () {
+        vm.obj.name = "树洞"
+    }
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{num>5?"yes":"no"}}
+        <div v-html='tpl'>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            name: "袁名德",
+            num: "18",
+            tpl:"<h1>唯美</h1>"
+        }
+    })
+</script>
+
+</html>

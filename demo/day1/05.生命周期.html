@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生命周期</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{msg}}
+        <button onclick="change()">更新</button>
+        <button onclick="destory()">销毁</button>
+        <button id="btn">点我</button>
+    </div>
+</body>
+<script>
+    // 写在这里不执行 是因为vue有生命周期 这一段代码在执行的时候 vue实例还没有完成挂载
+    //   $("#btn").click(function(){
+    //     alert("在哪里")
+    // })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "袁名德"
+        },
+        beforeCreate() {
+            alert("实例创建前");
+            console.log("实例创建前");
+        },
+        created() {
+            alert("实例创建完成");
+            console.log("实例创建完成");
+        },
+        beforeMount() {
+            alert("实例挂载前");
+        },
+        mounted() {
+            alert("实例已经挂载完成");
+            $("#btn").click(function () {
+                alert("在哪里")
+            })
+        },
+        beforeUpdate() {
+            alert("实例更新前");
+        },
+        updated() {
+            alert("实例更新后")
+        },
+        beforeDestroy() {
+            alert("实例销毁前");
+        },
+        destroyed() {
+            alert("实例销毁后")
+        },
+    });
+
+
+    function change() {
+        vm.msg = "哈哈哈哈"
+    };
+    // 销毁
+    function destory() {
+        vm.$destroy()
+    };
+</script>
+
+</html>

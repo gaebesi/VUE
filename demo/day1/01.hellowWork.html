@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+</head>
+
+<body>
+    <!-- 声明vue的挂载 里面所有的元素全部被vue接管 -->
+    <div id="app"> 
+        <!-- 文本插值 -->
+        {{name}}
+    </div>
+</body>
+
+<script>
+    // 声明式渲染 
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            name: "yuan",
+            age: "18"
+        }
+    })
+    // 变量的重新赋值
+    vm.name = "yuanmingde"
+</script>
+
+</html>
